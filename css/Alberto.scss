@@ -1,0 +1,29 @@
+.center{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.fondo{
+    background-color: rgb(233, 233, 233);
+    border-radius: 15px;
+}
+
+.anc{
+        cursor: pointer;
+}
+
+.imagu{
+    width: 8%;
+    height: 8%;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+.btnfn{
+    background-image: url("/css/img/boton.PNG");
+    height: 1.5rem;
+    width: 4rem;
+}
