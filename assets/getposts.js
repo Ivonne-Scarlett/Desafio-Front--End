@@ -11,8 +11,9 @@ const getposts = (callback) => {
 };
 
 const callBack = (posts) => {
-  console.log(posts);
-  let template = "";
+  console.log(posts)
+  let template = ""
+  let picture = ''
   for (post in posts) {
     console.log(post);
     console.log(posts[post].imagenPost)
@@ -48,8 +49,17 @@ const callBack = (posts) => {
               </p>
         
             `
+        picture += `
+                  <img
+                  class="mt-4 img-fluid "
+                  src="${posts[post].imagenPost}"
+                  class="img-fluid rounded-start"
+                  alt=""
+                  />
+        `
   }
-  document.querySelector(".posts").innerHTML = template;
+  document.querySelector(".posts").innerHTML = template
+  document.querySelector(".main__Picture").innerHTML = picture;
 };
 
 getposts(callBack);
