@@ -11,12 +11,11 @@ const getposts = (callback) => {
 };
 
 const callBack = (posts) => {
-  console.log(posts)
-  let template = ""
-  let picture = ''
+  console.log(posts);
+  let template = "";
+  let picture = "";
   for (post in posts) {
-    console.log(post);
-    console.log(posts[post].imagenPost)
+    console.log(post)
     template += `
               <p>
               <img
@@ -33,12 +32,14 @@ const callBack = (posts) => {
                 >
                 · <span class="text-muted">${posts[post].fechaCreacion}</span>
               </p>
-              <a class="fs-4 text-decoration-none text-dark fw-bold" href=""
+              <a class="fs-4 text-decoration-none text-dark fw-bold" href="post.html?idpost=${post}"
                 >${posts[post].titulo}</a
               >
+              <a class ="text-decoration-none" href='post.html?idpost=${post}'>
               <p class="card-text text-muted fs-6">
               ${posts[post].abstract}
               </p>
+              </a>
               <p class="card-text">
                 <small class="text-muted"
                   ><span> ${posts[post].tiempoLectura} </span
@@ -49,7 +50,7 @@ const callBack = (posts) => {
               </p>
         
             `
-        picture += `
+    picture += `
                   <img
                   class="mt-4 img-fluid "
                   src="${posts[post].imagenPost}"
@@ -58,7 +59,7 @@ const callBack = (posts) => {
                   />
         `
   }
-  document.querySelector(".posts").innerHTML = template
+  document.querySelector(".posts").innerHTML = template;
   document.querySelector(".main__Picture").innerHTML = picture;
 };
 
