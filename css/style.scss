@@ -1,0 +1,91 @@
+.center{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.fondo{
+    background-color: rgb(233, 233, 233);
+    border-radius: 15px;
+}
+
+.anc{
+        cursor: pointer;
+}
+
+.imagu{
+    width: 8%;
+    height: 8%;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+.btnfn{
+    background-image: url("/css/img/boton.PNG");
+    height: 1.5rem;
+    width: 4rem;
+}
+
+* {
+    font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  
+  aside {
+    .P-Maybe {
+      a {
+        color: rgb(189, 189, 189);
+        font-size: 14px;
+      }
+    }
+    .Buttons {
+      button {
+        color: inherit;
+        background-color: rgb(233, 233, 233);
+        &:hover {
+          background-color: rgb(219, 219, 219);
+        }
+      }
+    }
+    div {
+      .Button-connect {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        img {
+          height: 2rem;
+        }
+      }
+    }
+  }
+  
+  section {
+    .Links-pag {
+      position: relative;
+      li:nth-of-type(1) {
+        a {
+          font-size: 13px;
+          color: rgb(151, 148, 148);
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            font-weight: bolder;
+            color: rgba(41, 41, 41, 1);
+          }
+        }
+      }
+      li:nth-of-type(2) {
+        border-bottom: 2px solid rgba(41, 41, 41, 1);
+        a {
+          font-size: 13px;
+          color: rgba(41, 41, 41, 1);
+          font-weight: bolder;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
