@@ -16,12 +16,15 @@ const callBack = (posts) => {
   for (post in posts) {
     console.log(post);
     console.log(posts[post].imagenPost)
-    template += `<img class="anc imagu" src= "${posts[post].imagenPost} alt">
+    template += `
               <p>
-                
+              <img
+                      class="anc imagu"
+                      src="${posts[post].imagenPost}"
+                      alt
+                    >
                 <a class="fw-bold text-decoration-none text-dark" href=""
-                  >${posts[post].autor}</a
-                >
+                  >${posts[post].autor}</a>
                 
                 <span class="text-muted">in</span
                 ><a class="fw-bold text-decoration-none text-dark" href="">
