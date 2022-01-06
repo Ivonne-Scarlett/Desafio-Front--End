@@ -1,13 +1,13 @@
 
 
 window.addEventListener('load', () => {
-    let idPost = location.search.slice(4)
+    let idPost = location.search.slice(7)
     fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`)
     .then((response) => {
         return response.json()
     })
     .then((obj) => {        
-        console.log(obj.nombre)
+        
         document.querySelector('#inputTitulo').value = obj.titulo
         document.querySelector('#inputAbstract').value = obj.abstract
         document.querySelector('#inputAutor').value = obj.autor
@@ -38,8 +38,7 @@ modificarPost.addEventListener('click', () => {
         fechaCreacion: newFechaCreacion,
         tiempoLectura: newTiempoLectura,
         contenidoPost: newContenidoPost
-    }
-        
+    }   
     fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`,{
     method: 'PATCH',
     headers: {
