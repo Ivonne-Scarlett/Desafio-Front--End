@@ -1,7 +1,7 @@
 
 
 window.addEventListener('load', () => {
-    let idPost = location.search.slice(7)
+    let idPost = location.search.slice(8)    
     fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`)
     .then((response) => {
         return response.json()
@@ -17,13 +17,11 @@ window.addEventListener('load', () => {
     })         
 })
 
-
-
 let modificarPost = document.querySelector('#buttonModificar')
-let idInput = location.search.slice(7)
+let idInput = location.search.slice(8)
 
 modificarPost.addEventListener('click', () => {
-   
+    let idPost = location.search.slice(8)
     let newTitulo = document.querySelector('#inputTitulo').value    
     let newAbstract = document.querySelector('#inputAbstract').value 
     let newAutor = document.querySelector('#inputAutor').value
