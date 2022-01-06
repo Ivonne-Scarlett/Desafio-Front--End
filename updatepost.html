@@ -15,40 +15,40 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 overflow-hidden">
   <!--IVONNE CLASE NAV- -->
   <nav class="">
-    <header class="p-3 mb-3 border-bottom">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+    <header class="shadow   ">
+        <div class="container ">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+            <a href="/" class="d-flex align-items-center mb-lg-0 text-dark text-decoration-none">
+              <svg class="bi " width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
             </a>
     
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a class="navbar-brand" href="#"><img src="img/logo.svg" height="30px" alt=""></a></li>             
+            <ul class="nav col-12 col-lg-auto me-lg-auto pb-3 justify-content-center mb-md-0 ">
+              <li><a class="navbar-brand" href="#"><img src="img/logo.svg" height="25px" alt=""></a></li>             
             </ul>
     
-            <form class="col-12 col-lg-auto mb-lg-0 me-lg-3">
-                <div class="collapse navbar-collapse d-flex flex-row justify-content-end mt-4" id="navbarNavAltMarkup">
+            <form class="col-12 col-lg-auto me-lg-5 ">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-end " id="navbarNavAltMarkup">
                     <ul class="navbar-nav flex-row">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><img src="img/buscar.svg" width="60px"
-                            height="60px" alt=""></a>
+                      <li class="pt-2 nav-item ">
+                        <a class="nav-link active" aria-current="page" href="#"><img src="img/buscar.svg" width="50px"
+                            height="50px" alt=""></a>
                       </li>          
-                      <li class="nav-item">
-                        <a class="nav-link d-none d-sm-block" href="#"><img src="img/bandera.svg" width="60px" height="60px"
+                      <li class="pt-2 nav-item  ">
+                        <a class="nav-link d-none d-sm-block" href="#"><img src="img/bandera.svg" width="50px" height="50px"
                             alt=""></a>
                       </li>
                       <!--Menu desplegable alarma- -->
-                      <li class="nav-item dropdown d-flex me-4" width="50px">
+                      <li class="pt-2 nav-item  dropdown d-flex me-4 " width="40px">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                           data-bs-toggle="dropdown" aria-expanded="false">
-                          <a class="nav-link" href="#"><img src="img/alarma.png" width="25px" height="25px" alt=""></a>
+                          <a class="nav-link" href="#"><img src="img/alarma.png" width="22px" height="22px" alt=""></a>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink">
                           <li>
-                            <div class="d-flex flex-direction:column align-items: start">
+                            <div class="d-flex flex-direction:column align-items: start ">
                               <a class="dropdown-item " href="#">You´re all caught up</a>
                               <a class="dropdown-item text-success" href="#">Your stats</a>
                             </div>
@@ -56,18 +56,18 @@
                         </ul>
                       </li>
                       <!--fin de menu desplegable alarma- -->
-                      <li class="nav-item d-none d-sm-block me-4">
+                      <li class="pt-2 nav-item d-none d-sm-block me-4 ">
                         <button type="button" class="btn btn-light border rounded-pill">Upgrade</button>
                       </li>
                       <!--Menu desplegable- -->
-                      <li class="nav-item dropdown">
+                      <li class="pt-2 nav-item dropdown ">
                         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button"
                           data-bs-toggle="dropdown" aria-expanded="false">
                           <img src="img/avatar.jpg" width="30px" height="30px" class="rounded-circle" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                           <li>
-                            <div class="d-flex flex-direction:column">
+                            <div class="d-flex flex-direction:column ">
                               <img src="img/avatar.jpg" width="50px" height="50px" class="rounded-circle ms-3 mt-2" alt="">
                               <div>
                                 <a class="dropdown-item" href="#">Ana Bertha</a>
@@ -110,15 +110,13 @@
                   </div>
                 </div>  
             </form>
-    
-            
           </div>
         </div>
       </header>
   </nav>
 
     <main>
-        <h3 class='text-center mt-2 mb-2'>Modificar Post</h3>
+        <h3 class='text-center mt-2 mb-2 pb-4'>MODIFICAR POST</h3>
         <div class="container ">
             <form class="row g-3">
                 <div class="col-md-6">
@@ -153,42 +151,26 @@
     </main>
 
     <footer class='mt-auto'>        
-        <div class='container-footer'>
-            <div class='row'>
-                <div class='col-xs-12 bg-black pt-3'>
-                    <a><img src="img/medium-blanco.png" width="200px"alt="" class='ps-5'></a>              
-                </div>
-
-
-
-
-                <!-- <div class='col-xs-12 bg-black pt-3'>
-                    <a><img src="img/medium-blanco.png" width="200px"alt="" class='ps-5'></a>              
-                </div>
-                <div class='col-xs-12 bg-black pt-3 fs-6'>
-                    <a class="text-white ps-5 text-decoration-none"  href="#">About</a>
-                    <a class="text-white ps-1 text-decoration-none"  href="#">Write</a>
-                    <a class="text-white ps-1 text-decoration-none"  href="#">Help</a>
-                    <a class="text-white ps-1 text-decoration-none"  href="#">Legal</a>
-                </div>
-                <div class='col-12 bg-black pt-3'>
-                    <p class="text-decoration-line-through">Linea gris.</p>
-                </div>
-                <div class='col-xs-12 bg-black pb-3'>
-                    <a class="text-secondary ps-5 text-decoration-none"  href="#">Get the Medium app</a>
-                </div>
-                <div class='col-6 bg-black d-flex justify-content-center pb-2'>
-                    <a><img alt="App Store Mac" class="" src="https://miro.medium.com/max/405/1*Crl55Tm6yDNMoucPo1tvDg.png" width="135" height="41"></a>
-                </div>
-                <div class='col-6 bg-black d-flex justify-content-start'>
-                    <a><img alt="Google Play store" class="" src="https://miro.medium.com/max/405/1*W_RAPQ62h0em559zluJLdQ.png" width="135" height="41"></a>
-                </div>                -->
+      <div class='container-footer'>
+        <div class='row'>
+            <div class='col-xs-12 col-md-6 bg-black pt-3 container d-flex flex-row justify-content-start ps-5 align-items-center'>
+                  <a><img src="img/medium-blanco.png" width="200px"alt="" class=''></a>
             </div>
-
+            <div class='col-md-6 bg-black pt-3 d-flex flex-row justify-content-md-end align-items-center pe-5 ps-5'>                    
+                <a class="text-white text-decoration-none ps-2"  href="#">About</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Write</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Help</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Legal</a>                                                
+            </div>
+            <div class='col-xs-12 bg-black pb-3 d-block d-sm-none pt-3'>
+              <a class="text-secondary ps-5 text-decoration-none"  href="#">Get the Medium app</a>
+            </div>
+            <div class='col-xs-12 bg-black pb-3 d-block d-sm-none pt-1 ps-5'>
+              <a><img alt="App Store Mac" class="" src="https://miro.medium.com/max/405/1*Crl55Tm6yDNMoucPo1tvDg.png" width="135" height="41"></a>
+              <a><img alt="Google Play store" class="" src="https://miro.medium.com/max/405/1*W_RAPQ62h0em559zluJLdQ.png" width="135" height="41"></a>
+            </div>
         </div>
-        
-
-
+      </div> 
     </footer>
 
 
