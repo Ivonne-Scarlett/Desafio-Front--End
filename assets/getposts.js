@@ -13,10 +13,12 @@ const getposts = (callback) => {
 const callBack = (posts) => {
   console.log(posts);
   let template = "";
-  let picture = "";
   for (post in posts) {
     console.log(post)
     template += `
+
+             <div class='my-2 d-flex'>
+             <div class='col-md-9'>
               <p>
               <img
                       class="anc imagu"
@@ -48,19 +50,19 @@ const callBack = (posts) => {
                   ><span> · Popular on Medium</span>
                 </small><button class="btnfn border-0 ms-5"></button>
               </p>
-        
-            `
-    picture += `
-                  <img
-                  class="mt-4 img-fluid "
+              </div>
+
+              <img
+                  class="ms-2 img-fluid "
                   src="${posts[post].imagenPost}"
-                  class="img-fluid rounded-start"
+                  
                   alt=""
                   />
-        `
+                  </div>
+            `
   }
   document.querySelector(".posts").innerHTML = template;
-  document.querySelector(".main__Picture").innerHTML = picture;
+
 };
 
 getposts(callBack);
