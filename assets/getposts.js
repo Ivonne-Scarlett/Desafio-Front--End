@@ -34,10 +34,10 @@ const callBack = (posts) => {
                 >
                 · <span class="text-muted">${posts[post].fechaCreacion}</span>
               </p>
-              <a class="fs-4 text-decoration-none text-dark fw-bold" href="post.html?idpost=${post}"
+              <a class="fs-4 text-decoration-none text-dark fw-bold" href="listpost.html?idpost=${post}"
                 >${posts[post].titulo}</a
               >
-              <a class ="text-decoration-none" href='post.html?idpost=${post}'>
+              <a class ="text-decoration-none" href='listpost.html?idpost=${post}'>
               <p class="card-text text-muted fs-6">
               ${posts[post].abstract}
               </p>
