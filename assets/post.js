@@ -7,9 +7,14 @@ botonCrear.addEventListener("click", () =>{
     let newFechaCreacion = document.querySelector('#inputFechaCreacion').value
     let newTiempoLectura = document.querySelector('#inputTiempoLectura').value
     let newContenidoPost = document.querySelector('#inputContenidoPost').value
-    if(newTitulo == null || newAbstract == null || newAutor == null || newFechaCreacion == null || newTiempoLectura == null || newContenidoPost == null ){
-        alert("es necesario que coloques informacion en todos los campos")
-    }else{
+    if(
+        newTitulo != '' &&
+        newAbstract != '' &&
+        newAutor != '' &&
+        newFechaCreacion != '' &&
+        newTiempoLectura != '' &&
+        newContenidoPost != ''
+     ){
         let newPost = {
             titulo: newTitulo,
             abstract: newAbstract,
@@ -18,7 +23,6 @@ botonCrear.addEventListener("click", () =>{
             tiempoLectura: newTiempoLectura,
             contenidoPost: newContenidoPost
         }
-        // console.log(newPost)
         fetch("https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/.json", {
             method: "POST",
             headers: {
@@ -27,8 +31,11 @@ botonCrear.addEventListener("click", () =>{
             body: JSON.stringify(newPost)
         })
         .then((resp) => {
+            location.replace("/index.html")
             return console.log("SE AGREGO NUEVO POST")
         })
+    }else{
+        alert("Hay espacios vacios")
     }
 })
 

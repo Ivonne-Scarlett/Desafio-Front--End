@@ -30,7 +30,14 @@ modificarPost.addEventListener('click', () => {
     let newFechaCreacion = document.querySelector('#inputFechaCreacion').value
     let newTiempoLectura = document.querySelector('#inputTiempoLectura').value
     let newContenidoPost = document.querySelector('#inputContenidoPost').value
-    
+    if(
+        newTitulo != '' &&
+        newAbstract != '' &&
+        newAutor != '' &&
+        newFechaCreacion != '' &&
+        newTiempoLectura != '' &&
+        newContenidoPost != ''
+     ){
     let newPostAct = {
         titulo: newTitulo,
         abstract: newAbstract,
@@ -50,6 +57,9 @@ modificarPost.addEventListener('click', () => {
         console.log('BD actualizada con patch')
         location.replace('index.html')
     }) 
+    }else{
+        alert("Hay espacios vacios")
+    }
 })
 
 
