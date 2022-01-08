@@ -2,6 +2,7 @@
 
 window.addEventListener('load', () => {
     let idPost = location.search.slice(8)    
+    
     fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`)
     .then((response) => {
         return response.json()
@@ -16,6 +17,7 @@ window.addEventListener('load', () => {
         document.querySelector('#inputContenidoPost').value = obj.contenidoPost
     })         
 })
+
 
 let modificarPost = document.querySelector('#buttonModificar')
 let idInput = location.search.slice(8)
@@ -46,8 +48,9 @@ modificarPost.addEventListener('click', () => {
     })
     .then((response) => {
         console.log('BD actualizada con patch')
-        location.replace('http://127.0.0.1:5501/index.html')
+        location.replace('index.html')
     }) 
 })
+
 
 
