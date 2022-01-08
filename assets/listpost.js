@@ -38,9 +38,9 @@ const getposts = (callback) => {
         <div class="container-fluid">
         <div class="row justify-content-end">
         <div class='col-4 '>
-        <button type="button" class="btn btn-primary btn-sm ">Eliminar post</button>
+        <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Eliminar post</button>
         <a href='updatepost.html?idpost=${idpost}'>
-        <button type="button" class="btn btn-primary btn-sm">Editar Post </button>
+        <button type="button" class="btn btn-primary bg-black color-white btn-sm">Editar Post </button>
         </a>
         </div>
         </div>
