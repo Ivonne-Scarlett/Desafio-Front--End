@@ -1,1 +1,184 @@
 <!-- Aqui se despliega el template para actualizar el post seleccionado -->
+
+<!-- Aqui se despliega el template del post seleccionado -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UpdatePost</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 overflow-hidden">
+  <!--IVONNE CLASE NAV- -->
+  <nav class="">
+    <header class="shadow   ">
+        <div class="container ">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+            <a href="/" class="d-flex align-items-center mb-lg-0 text-dark text-decoration-none">
+              <svg class="bi " width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto pb-3 justify-content-center mb-md-0 ">
+              <li><a class="navbar-brand" href="index.html"><img src="img/logo.svg" height="25px" alt=""></a></li>             
+            </ul>
+    
+            <form class="col-12 col-lg-auto me-lg-5 ">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-end " id="navbarNavAltMarkup">
+                    <ul class="navbar-nav flex-row">
+                      <li class="pt-2 nav-item ">
+                        <a class="nav-link active" aria-current="page" href="#"><img src="img/buscar.svg" width="50px"
+                            height="50px" alt=""></a>
+                      </li>          
+                      <li class="pt-2 nav-item  ">
+                        <a class="nav-link d-none d-sm-block" href="#"><img src="img/bandera.svg" width="50px" height="50px"
+                            alt=""></a>
+                      </li>
+                      <!--Menu desplegable alarma- -->
+                      <li class="pt-2 nav-item  dropdown d-flex me-4 " width="40px">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <a class="nav-link" href="#"><img src="img/alarma.png" width="22px" height="22px" alt=""></a>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                            <div class="d-flex flex-direction:column align-items: start ">
+                              <a class="dropdown-item " href="#">You´re all caught up</a>
+                              <a class="dropdown-item text-success" href="#">Your stats</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <!--fin de menu desplegable alarma- -->
+                      <li class="pt-2 nav-item d-none d-sm-block me-4 ">
+                        <button type="button" class="btn btn-light border rounded-pill">Upgrade</button>
+                      </li>
+                      <!--Menu desplegable- -->
+                      <li class="pt-2 nav-item dropdown ">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="img/avatar.jpg" width="30px" height="30px" class="rounded-circle" alt="">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                            <div class="d-flex flex-direction:column ">
+                              <img src="img/avatar.jpg" width="50px" height="50px" class="rounded-circle ms-3 mt-2" alt="">
+                              <div>
+                                <a class="dropdown-item" href="#">Ana Bertha</a>
+                                <a class="dropdown-item" href="#">ana76@gmail.com</a>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Write a story</a></li>
+                          <li><a class="dropdown-item" href="#">Stories</a></li>
+                          <li><a class="dropdown-item" href="#">Stats</a></li>
+                          <li><a class="dropdown-item" href="#">Design your profile</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Lists</a></li>
+                          <li><a class="dropdown-item" href="#">Publications</a></li>
+                          <li><a class="dropdown-item" href="#">Control your recommendations</a></li>
+                          <li><a class="dropdown-item" href="#">Design your profile</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          <li><a class="dropdown-item text-success" href="#">Become a member</a></li>
+                          <li><a class="dropdown-item" href="#">Help</a></li>
+                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <div class="d-flex flex-direction:column align-items: start">
+                            <a class="dropdown-item " href="#">Privacy</a>
+                            <a class="dropdown-item " href="#">Terms</a>
+                          </div>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>  
+            </form>
+          </div>
+        </div>
+      </header>
+  </nav>
+
+    <main>
+        <h3 class='text-center mt-2 mb-2 pb-4'>MODIFICAR POST</h3>
+        <div class="container ">
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputAutor" class="form-label">Autor</label>
+                  <input type="text" class="form-control" id="inputAutor">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputTiempoLectura" class="form-label">Tiempo de lectura</label>
+                  <input type="text" class="form-control" id="inputTiempoLectura">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputfechaCreacion" class="form-label">Fecha de creación</label>
+                    <input type="text" class="form-control" id="inputFechaCreacion">
+                  </div>
+                <div class="col-12">
+                  <label for="inputTitulo" class="form-label">Titulo</label>
+                  <input type="text" class="form-control" id="inputTitulo" placeholder="">
+                </div>
+                <div class="col-12">
+                  <label for="inputAbstract" class="form-label">Resumen</label>
+                  <input type="text" class="form-control" id="inputAbstract" placeholder="">
+                </div>
+                <div class="col-12">
+                    <label for="inputContenidoPost" class="form-label">Contenido del Post</label>
+                    <input type="text" class="form-control" id="inputContenidoPost" placeholder="">
+                  </div>              
+                <div class="col-12 d-flex justify-content-center mb-4">
+                  <button type="button" class="btn btn-primary bg-black color-white" id="buttonModificar">Modificar</button>
+                </div>
+              </form>
+        </div>      
+    </main>
+
+    <footer class='mt-auto'>        
+      <div class='container-footer'>
+        <div class='row'>
+            <div class='col-xs-12 col-md-6 bg-black pt-3 container d-flex flex-row justify-content-start ps-5 align-items-center'>
+                  <a><img src="img/medium-blanco.png" width="200px"alt="" class=''></a>
+            </div>
+            <div class='col-md-6 bg-black pt-3 d-flex flex-row justify-content-md-end align-items-center pe-5 ps-5'>                    
+                <a class="text-white text-decoration-none ps-2"  href="#">About</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Write</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Help</a>
+                <a class="text-white text-decoration-none ps-4 "  href="#">Legal</a>                                                
+            </div>
+            <div class='col-xs-12 bg-black pb-3 d-block d-sm-none pt-3'>
+              <a class="text-secondary ps-5 text-decoration-none"  href="#">Get the Medium app</a>
+            </div>
+            <div class='col-xs-12 bg-black pb-3 d-block d-sm-none pt-1 ps-5'>
+              <a><img alt="App Store Mac" class="" src="https://miro.medium.com/max/405/1*Crl55Tm6yDNMoucPo1tvDg.png" width="135" height="41"></a>
+              <a><img alt="Google Play store" class="" src="https://miro.medium.com/max/405/1*W_RAPQ62h0em559zluJLdQ.png" width="135" height="41"></a>
+            </div>
+        </div>
+      </div> 
+    </footer>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src='assets/updatepost.js'></script>
+  </body>
+</html>
