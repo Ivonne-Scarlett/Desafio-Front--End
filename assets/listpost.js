@@ -1,4 +1,3 @@
-
 let idpost = location.search.slice(8)
 console.log(idpost)
 
@@ -36,20 +35,50 @@ const getposts = (callback) => {
             <p>${posts.contenidoPost}</p>
         </div>
         <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
+      <div class="row justify-content-end mb-3">
         <div class='col-md-4'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Eliminar post</button>
+        <button type="button" class="btn btn-primary bg-black color-white btn-sm " id='eliminarPost' >Eliminar post</button>
         <a href='updatepost.html?idpost=${idpost}'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm">Editar Post </button>
+        <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Editar Post </button>
         </a>
         </div>
         </div>
         </div>
-
-      `
-        console.log(posts.titulo)
+      `   
     
     document.querySelector('.posts').innerHTML = template
-  };
+    let eliminar = document.querySelector('#eliminarPost')
+
+    eliminar.addEventListener('click',()=>{
+      let confirmation = confirm('Deseas eliminar este post? ')
+      if(confirmation == true){
+        let idpost = location.search.slice(8)
+        fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idpost}.json`,{
+          method:'DELETE'
+        })
+        .then(()=>{
+          location.replace('index.html')      
+        })
+      }
+      else{
+        console.log('no se elimino nada')
+      }
+    })
+      
+  }
 
   getposts(callBack)
+
+
+
+
+
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   let eliminar = document.querySelector('#eliminarPost')
+//   console.log('DOM fully loaded and parsed');
+//   eliminar.addEventListener('click',()=>{
+//     console.log('se esta eliminando')
+//   })
+// });
+
