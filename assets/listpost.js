@@ -15,38 +15,58 @@ const getposts = (callback) => {
   
   const callBack = (posts) => {
     let idpost = location.search.slice(8)
-      let template = `     
+      let template = `
+      
+      <div class="container ">
+            <form class="row position-relative">
+                <div class="col-md-3"></div>
+                <div class="col-md-6"><h1 class='mt-5'>${posts.titulo}</h1></div>
+                <div class="col-md-3"></div>
 
-        <div>
-        <h1 class='mt-3'>${posts.titulo}</h1>
-        </div>
-        <div>
-        <h4 class='ps-2 mt-3'>${posts.abstract}</h2>
-        <img class="mt-4 img-fluid rounded-circle mb-4"
-                  src="${posts.imagenPost}"
-                  height="60"
-                  width="60"
-                  alt=""
-                  />
-        <span>${posts.autor}, </span>
-        <span>${posts.fechaCreacion}</span>
-        <button type="" class="btn btn-outline-secondary rounded-pill">${posts.tiempoLectura}</button>
-        </div>
-        <div>
-            <p>${posts.contenidoPost}</p>
-        </div>
-        <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
-        <div class='col-md-4'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm " id='eliminarPost' >Eliminar post</button>
-        <a href='updatepost.html?idpost=${idpost}'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Editar Post </button>
-        </a>
-        </div>
-        </div>
-        </div>
-      `   
-    
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                  <p>
+                      <img class="mt-4 img-fluid rounded-circle mb-4"
+                      src="${posts.imagenPost}"
+                      height="30"
+                      width="30"
+                      alt=""
+                      />
+                      <span class="text-primary fw-light ms-1">${posts.autor}</span>
+                      <span class="fw-light ms-3">${posts.fechaCreacion} ·</span>
+                      <span class="fw-light">${posts.tiempoLectura}</span>
+                  </p>
+                </div>
+                <div class="col-md-3"></div>
+                
+                <div class="col-md-12">
+                    <img class="mt-2 mb-2 col-md-12"
+                    src="${posts.imagenPost}"
+                    height="400" 
+                    alt=""
+                    />
+                </div>
+
+                <div class="col-md-3"></div>
+                <div class="col-md-6"><h5 class='mt-5 fw-lighter fst-italic'>${posts.abstract}</h5></div>
+                <div class="col-md-3"></div>
+               
+                <div class="col-md-3"></div>
+                <div class="col-md-6 mt-5 mb-5"><p>${posts.contenidoPost}</p></div>
+                <div class="col-md-3"></div>
+
+                <div class="col-md-4"></div>
+                <div class="col-md-2"><button type="button" class="btn btn-primary bg-black color-white btn-sm mb-5 " id='eliminarPost' >Eliminar post</button></div>
+                <div class="col-md-3 d-flex ">
+                  <a href='updatepost.html?idpost=${idpost}'>
+                    <button type="button" class="btn btn-primary bg-black color-white btn-sm mb-5 ">Editar Post </button>
+                  </a>
+                </div>
+                <div class="col-md-3"></div>
+
+            </form>
+      </div> 
+      ` 
     document.querySelector('.posts').innerHTML = template
     let eliminar = document.querySelector('#eliminarPost')
 
