@@ -16,7 +16,7 @@ const callBack = (posts) => {
   let arrays = Object.entries(posts)
     //console.log(arrays[0][0])
     let template = ""
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i <= 5; i++) {
         template += `
 
              <div class='my-2 d-flex'>
