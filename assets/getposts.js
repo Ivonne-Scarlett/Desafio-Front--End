@@ -71,7 +71,7 @@ getposts(callBack);
 
 //Aqui se realiza el scroll
 window.addEventListener('scroll',()=>{
-  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight-1){
+  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight-1.5){
     getposts(callBack)
   }
 })
