@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
         document.querySelector('#inputAutor').value = obj.autor        
         document.querySelector('#inputTiempoLectura').value = obj.tiempoLectura
         document.querySelector('#inputContenidoPost').value = obj.contenidoPost
+        document.querySelector('#inputImagenPost').value = obj.imagenPost        
     })         
 })
 
@@ -28,11 +29,13 @@ modificarPost.addEventListener('click', () => {
     let newAutor = document.querySelector('#inputAutor').value    
     let newTiempoLectura = document.querySelector('#inputTiempoLectura').value
     let newContenidoPost = document.querySelector('#inputContenidoPost').value
+    let newImagenPost = document.querySelector('#inputImagenPost').value
     if(
         newTitulo != '' &&
         newAbstract != '' &&
         newAutor != '' &&        
         newTiempoLectura != '' &&
+        newImagenPost != '' &&
         newContenidoPost != ''
      ){
     let newPostAct = {
@@ -40,7 +43,8 @@ modificarPost.addEventListener('click', () => {
         abstract: newAbstract,
         autor: newAutor,       
         tiempoLectura: newTiempoLectura,
-        contenidoPost: newContenidoPost
+        contenidoPost: newContenidoPost,
+        imagenPost: newImagenPost
     }   
     fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`,{
     method: 'PATCH',
