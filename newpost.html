@@ -107,30 +107,32 @@
         <h3 class='text-center mt-2 mb-2 pb-4' id="crearPost">CREAR POST</h3>
         <div class="container ">
             <form class="row g-3">
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <label for="inputAutor" class="form-label">Autor</label>
                   <input type="text" class="form-control" id="inputAutor">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="inputTiempoLectura" class="form-label">Tiempo de lectura</label>
                   <input type="text" class="form-control" id="inputTiempoLectura">
                 </div>
-                <div class="col-md-3">
-                    <label for="inputfechaCreacion" class="form-label">Fecha de creación</label>
-                    <input type="text" class="form-control" id="inputFechaCreacion">
-                  </div>
                 <div class="col-12">
                   <label for="inputTitulo" class="form-label">Titulo</label>
                   <input type="text" class="form-control" id="inputTitulo" placeholder="">
                 </div>
                 <div class="col-12">
                   <label for="inputAbstract" class="form-label">Resumen</label>
-                  <input type="text" class="form-control" id="inputAbstract" placeholder="">
+                  <!-- <input type="text" class="form-control" id="inputAbstract" placeholder=""> -->
+                  <textarea name="inputAbstract" id="inputAbstract" cols="30" rows="2" class="form-control w-100"></textarea>
                 </div>
                 <div class="col-12">
                     <label for="inputContenidoPost" class="form-label">Contenido del Post</label>
-                    <input type="text" class="form-control" id="inputContenidoPost" placeholder="">
-                  </div>              
+                    <!-- <input type="text" class="form-control" id="inputContenidoPost" placeholder=""> -->
+                    <textarea name="inputContenidoPost" id="inputContenidoPost" cols="30" rows="10" class="form-control w-100"></textarea>
+                </div>    
+                <div class="col-12">
+                  <label for="inputImagenPost" class="form-label">Imagen / URL</label>
+                  <input type="text" class="form-control" id="inputImagenPost" placeholder="">
+                </div>           
                 <div class="col-6 d-flex justify-content-center mb-4">
                   <button type="button" class="btn btn-primary bg-black color-white" id="buttonCrear">Crear</button>
                 </div>

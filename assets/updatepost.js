@@ -11,8 +11,7 @@ window.addEventListener('load', () => {
         
         document.querySelector('#inputTitulo').value = obj.titulo
         document.querySelector('#inputAbstract').value = obj.abstract
-        document.querySelector('#inputAutor').value = obj.autor
-        document.querySelector('#inputFechaCreacion').value = obj.fechaCreacion
+        document.querySelector('#inputAutor').value = obj.autor        
         document.querySelector('#inputTiempoLectura').value = obj.tiempoLectura
         document.querySelector('#inputContenidoPost').value = obj.contenidoPost
     })         
@@ -26,23 +25,20 @@ modificarPost.addEventListener('click', () => {
     let idPost = location.search.slice(8)
     let newTitulo = document.querySelector('#inputTitulo').value    
     let newAbstract = document.querySelector('#inputAbstract').value 
-    let newAutor = document.querySelector('#inputAutor').value
-    let newFechaCreacion = document.querySelector('#inputFechaCreacion').value
+    let newAutor = document.querySelector('#inputAutor').value    
     let newTiempoLectura = document.querySelector('#inputTiempoLectura').value
     let newContenidoPost = document.querySelector('#inputContenidoPost').value
     if(
         newTitulo != '' &&
         newAbstract != '' &&
-        newAutor != '' &&
-        newFechaCreacion != '' &&
+        newAutor != '' &&        
         newTiempoLectura != '' &&
         newContenidoPost != ''
      ){
     let newPostAct = {
         titulo: newTitulo,
         abstract: newAbstract,
-        autor: newAutor,
-        fechaCreacion: newFechaCreacion,
+        autor: newAutor,       
         tiempoLectura: newTiempoLectura,
         contenidoPost: newContenidoPost
     }   
