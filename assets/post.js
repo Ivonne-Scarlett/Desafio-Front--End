@@ -1,4 +1,4 @@
-
+ 
 let botonCrear = document.querySelector("#buttonCrear")
 botonCrear.addEventListener("click", () =>{
     let newTitulo = document.querySelector('#inputTitulo').value    

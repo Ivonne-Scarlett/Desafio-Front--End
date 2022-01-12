@@ -16,35 +16,84 @@ const getposts = (callback) => {
   const callBack = (posts) => {
     let idpost = location.search.slice(8)
       let template = `
-        <div>
-        <h1 class='mt-3'>${posts.titulo}</h1>
-        </div>
-        <div>
-        <h4 class='ps-2 mt-3'>${posts.abstract}</h2>
-        <img class="mt-4 img-fluid rounded-circle mb-4"
-                  src="${posts.imagenPost}"
-                  height="60"
-                  width="60"
-                  alt=""
-                  />
-        <span>${posts.autor}, </span>
-        <span>${posts.fechaCreacion}</span>
-        <button type="" class="btn btn-outline-secondary rounded-pill">${posts.tiempoLectura}</button>
-        </div>
-        <div>
-            <p>${posts.contenidoPost}</p>
-        </div>
-        <div class="container-fluid">
+
+     
+
+      <div class="container ">
+            <form class="row position-relative">
+                <div class="col-md-8 position-absolute top-0 start-50 translate-middle-x mt-5">
+                    <h1 class='mt-3'>${posts.titulo}</h1>
+                </div>
+                <div class="col-md-8 position-absolute top-0 start-50 translate-middle-x">
+                    <h4 class='ps-2 mt-3'>${posts.abstract}</h2>
+                </div>
+            </form>
+      </div> 
+
+     
+
+
+
+
+
+
+
+      <div>
+      
+      <img class="mt-4 img-fluid rounded-circle mb-4"
+                src="${posts.imagenPost}"
+                height="60"
+                width="60"
+                alt=""
+                />
+      <span>${posts.autor}, </span>
+      <span>${posts.fechaCreacion}</span>
+      <button type="" class="btn btn-outline-secondary rounded-pill">${posts.tiempoLectura}</button>
+      </div>
+      <div>
+          <p>${posts.contenidoPost}</p>
+      </div>
+      <div class="container-fluid">
       <div class="row justify-content-end mb-3">
-        <div class='col-md-4'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm " id='eliminarPost' >Eliminar post</button>
-        <a href='updatepost.html?idpost=${idpost}'>
-        <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Editar Post </button>
-        </a>
-        </div>
-        </div>
-        </div>
+      <div class='col-md-4'>
+      <button type="button" class="btn btn-primary bg-black color-white btn-sm " id='eliminarPost' >Eliminar post</button>
+      <a href='updatepost.html?idpost=${idpost}'>
+      <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Editar Post </button>
+      </a>
+      </div>
+      </div>
+      </div>
       `   
+
+      //   <div>
+      //   <h1 class='mt-3'>${posts.titulo}</h1>
+      //   </div>
+      //   <div>
+      //   <h4 class='ps-2 mt-3'>${posts.abstract}</h2>
+      //   <img class="mt-4 img-fluid rounded-circle mb-4"
+      //             src="${posts.imagenPost}"
+      //             height="60"
+      //             width="60"
+      //             alt=""
+      //             />
+      //   <span>${posts.autor}, </span>
+      //   <span>${posts.fechaCreacion}</span>
+      //   <button type="" class="btn btn-outline-secondary rounded-pill">${posts.tiempoLectura}</button>
+      //   </div>
+      //   <div>
+      //       <p>${posts.contenidoPost}</p>
+      //   </div>
+      //   <div class="container-fluid">
+      // <div class="row justify-content-end mb-3">
+      //   <div class='col-md-4'>
+      //   <button type="button" class="btn btn-primary bg-black color-white btn-sm " id='eliminarPost' >Eliminar post</button>
+      //   <a href='updatepost.html?idpost=${idpost}'>
+      //   <button type="button" class="btn btn-primary bg-black color-white btn-sm ">Editar Post </button>
+      //   </a>
+      //   </div>
+      //   </div>
+      //   </div>
+      // `   
     
     document.querySelector('.posts').innerHTML = template
     let eliminar = document.querySelector('#eliminarPost')
