@@ -4,14 +4,37 @@ botonCrear.addEventListener("click", () =>{
     let newTitulo = document.querySelector('#inputTitulo').value    
     let newAbstract = document.querySelector('#inputAbstract').value
     let newAutor = document.querySelector('#inputAutor').value
-    let newFechaCreacion = document.querySelector('#inputFechaCreacion').value
+    let newImgCreacion = document.querySelector('#inputImagenPost').value
     let newTiempoLectura = document.querySelector('#inputTiempoLectura').value
     let newContenidoPost = document.querySelector('#inputContenidoPost').value
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = today.getMonth()
+    let yyyy = today.getFullYear();
+
+    let meses = [
+        "Ene",
+        "Feb",
+        "Mar",
+        "Abr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
+
+    let mon = meses[mm]
+    today = mon + ' ' + dd + ',' + yyyy;
+    // document.write(today);
     if(
         newTitulo != '' &&
         newAbstract != '' &&
         newAutor != '' &&
-        newFechaCreacion != '' &&
+        newImgCreacion != '' &&
         newTiempoLectura != '' &&
         newContenidoPost != ''
      ){
@@ -19,9 +42,10 @@ botonCrear.addEventListener("click", () =>{
             titulo: newTitulo,
             abstract: newAbstract,
             autor: newAutor,
-            fechaCreacion: newFechaCreacion,
+            imagenPost: newImgCreacion,
             tiempoLectura: newTiempoLectura,
-            contenidoPost: newContenidoPost
+            contenidoPost: newContenidoPost,
+            fechaCreacion: today
         }
         fetch("https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/.json", {
             method: "POST",
