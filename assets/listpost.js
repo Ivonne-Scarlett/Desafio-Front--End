@@ -40,9 +40,10 @@ const getposts = (callback) => {
                 <div class="col-md-3"></div>
                 
                 <div class="col-md-12">
-                    <img class="mt-2 mb-2 col-md-12"
+                    <img class="mt-2 mb-2 col-md-12 img-responsive"
                     src="${posts.imagenPost}"
-                    height="400" 
+                    height= "400px" 
+                    width= 100%
                     alt=""
                     />
                 </div>
@@ -55,43 +56,22 @@ const getposts = (callback) => {
                 <div class="col-md-6 mt-5 mb-5"><p>${posts.contenidoPost}</p></div>
                 <div class="col-md-3"></div>
 
-                <div class="col-md-4"></div>
-                <div class="col-md-2"><button type="button" class="btn btn-primary bg-black color-white btn-sm mb-5 " id='eliminarPost' >Eliminar post</button></div>
-                <div class="col-md-3 d-flex ">
+                <div class="col-md-5"></div>
+                <div class="col-md-2 d-flex ">
                   <a href='updatepost.html?idpost=${idpost}'>
                     <button type="button" class="btn btn-primary bg-black color-white btn-sm mb-5 ">Editar Post </button>
                   </a>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-5"></div>
 
             </form>
       </div> 
       ` 
     document.querySelector('.posts').innerHTML = template
-    let eliminar = document.querySelector('#eliminarPost')
-
-    eliminar.addEventListener('click',()=>{
-      let confirmation = confirm('¿Deseas eliminar este post? ')
-      if(confirmation == true){
-        let idpost = location.search.slice(8)
-        fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idpost}.json`,{
-          method:'DELETE'
-        })
-        .then(()=>{
-          location.replace('index.html')      
-        })
-      }
-      else{
-        console.log('no se elimino nada')
-      }
-    })
-      
+          
   }
 
   getposts(callBack)
-
-
-
 
 
 

@@ -63,4 +63,22 @@ modificarPost.addEventListener('click', () => {
 })
 
 
+let eliminar = document.querySelector('#eliminarPost')
+
+eliminar.addEventListener('click',()=>{
+      let confirmation = confirm('¿Deseas eliminar este post? ')
+      if(confirmation == true){
+        let idpost = location.search.slice(8)
+        fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idpost}.json`,{
+          method:'DELETE'
+        })
+        .then(()=>{
+          location.replace('index.html')      
+        })
+      }
+      else{
+        console.log('no se elimino nada')
+      }
+})
+
 
