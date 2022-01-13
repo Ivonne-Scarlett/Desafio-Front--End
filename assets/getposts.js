@@ -16,16 +16,36 @@ const callBack = (posts) => {
   let post = Object.entries(posts).reverse()
     for (i = indice; i <= indice + 5; i++) {
         template += `
+            <style>
+                .title{
+                  font-size: 1.5rem;
+                }
+                @media only screen and (max-width: 375px) {
+                  .abstract{
+                    display: none;
+                  }
+                  .cards{
+                    padding-top: 0;
+                  }
+                  .title{
+                    font-size: 1rem; 
+                  }
+                  .text-slow{
+                    font-size: .8rem;
+                  }
+                  
+                }
+              </style>
 
-             <div class='my-2 d-flex cards'>
-             <div class='col-md-9'>
+             <div class='my-2 d-flex cards mt-4'>
+             <div class='col-9'>
               <p>
               <img
                       class="anc imagu"
                       src="${post[i][1].imagenPost}"
                       alt
                     >
-                <a class="fw-bold text-decoration-none text-dark" href=""
+                <a class="text-slow fw-bold text-decoration-none text-dark" href=""
                   >${post[i][1].autor}</a>
                 
                 <span class="text-muted">in</span
@@ -34,11 +54,11 @@ const callBack = (posts) => {
                 >
                 · <span class="text-muted">${post[i][1].fechaCreacion}</span>
               </p>
-              <a class="fs-4 text-decoration-none text-dark fw-bold" href="listpost.html?idpost=${post[i][0]}"
+              <a class="title text-justify text-decoration-none text-dark fw-bold" id="tilte href="listpost.html?idpost=${post[i][0]}"
                 >${post[i][1].titulo}</a
               >
               <a class ="text-decoration-none" href='listpost.html?idpost=${post[i][0]}'>
-              <p class="card-text text-muted fs-6">
+              <p class="card-text text-muted fs-6 abstract">
               ${post[i][1].abstract}
               </p>
               </a>
@@ -48,18 +68,20 @@ const callBack = (posts) => {
                   ><button class="fondo border-0 text-muted">
                     Working Class</button
                   ><span> · Popular on Medium</span>
-                </small><button class="btnfn border-0 ms-5"></button>
+                </small><button class="btnfn border-0 ms-4"></button>
               </p>
               </div>
 
               <img
-                  class="ms-2 img-fluid "
+                  class="ms-2 img-fluid img"
                   src="${post[i][1].imagenPost}"
                   
                   alt=""
                   />
                   </div>
+                  
             `
+            
     }
    
   document.querySelector(".posts").innerHTML = template;
