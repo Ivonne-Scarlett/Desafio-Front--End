@@ -1,3 +1,7 @@
+* {
+  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .center {
   margin: 0;
   padding: 0;
@@ -49,10 +53,6 @@
   background-image: url("/img/boton.PNG");
   height: 1.5rem;
   width: 4rem;
-}
-
-* {
-  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 aside .P-Maybe a {
