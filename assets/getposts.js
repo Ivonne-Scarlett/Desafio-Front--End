@@ -16,27 +16,7 @@ const callBack = (posts) => {
   let post = Object.entries(posts).reverse()
     for (i = indice; i <= indice + 5; i++) {
         template += `
-            <style>
-                .title{
-                  font-size: 1.5rem;
-                }
-                @media only screen and (max-width: 375px) {
-                  .abstract{
-                    display: none;
-                  }
-                  .cards{
-                    padding-top: 0;
-                  }
-                  .title{
-                    font-size: 1rem; 
-                  }
-                  .text-slow{
-                    font-size: .8rem;
-                  }
-                  
-                }
-              </style>
-
+       
              <div class='my-2 d-flex cards mt-4'>
              <div class='col-9'>
               <p>

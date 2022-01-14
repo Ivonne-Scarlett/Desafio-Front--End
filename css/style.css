@@ -1,8 +1,12 @@
 .center {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1rem;
 }
 
@@ -22,6 +26,25 @@
   padding: 2px;
 }
 
+.title {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 375px) {
+  .abstract {
+    display: none;
+  }
+  .cards {
+    padding-top: 0;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .text-slow {
+    font-size: .8rem;
+  }
+}
+
 .btnfn {
   background-image: url("/img/boton.PNG");
   height: 1.5rem;
@@ -29,25 +52,33 @@
 }
 
 * {
-  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 aside .P-Maybe a {
   color: #bdbdbd;
   font-size: 14px;
 }
+
 aside .Buttons button {
   color: inherit;
   background-color: #e9e9e9;
 }
+
 aside .Buttons button:hover {
   background-color: #dbdbdb;
 }
+
 aside div .Button-connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
 }
+
 aside div .Button-connect img {
   height: 2rem;
 }
@@ -55,22 +86,27 @@ aside div .Button-connect img {
 section .Links-pag {
   position: relative;
 }
+
 section .Links-pag li:nth-of-type(1) a {
   font-size: 13px;
   color: #979494;
   font-weight: bold;
   text-decoration: none;
 }
+
 section .Links-pag li:nth-of-type(1) a:hover {
   font-weight: bolder;
   color: #292929;
 }
+
 section .Links-pag li:nth-of-type(2) {
   border-bottom: 2px solid #292929;
 }
+
 section .Links-pag li:nth-of-type(2) a {
   font-size: 13px;
   color: #292929;
   font-weight: bolder;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

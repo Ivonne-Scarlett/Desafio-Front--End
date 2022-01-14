@@ -22,6 +22,24 @@
     padding: 2px;
 }
 
+.title{
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 375px) {
+  .abstract{
+    display: none;
+  }
+  .cards{
+    padding-top: 0;
+  }
+  .title{
+    font-size: 1rem; 
+  }
+  .text-slow{
+    font-size: .8rem;
+  }
+}
+
 .btnfn{
     background-image: url("/img/boton.PNG");
     height: 1.5rem;
@@ -61,7 +79,9 @@
       }
     }
   }
+
   
+
   section {
     .Links-pag {
       position: relative;
