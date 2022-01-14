@@ -13,10 +13,10 @@ botonCrear.addEventListener("click", () =>{
     let yyyy = today.getFullYear();
 
     let meses = [
-        "Ene",
+        "Jan",
         "Feb",
         "Mar",
-        "Abr",
+        "Apr",
         "May",
         "Jun",
         "Jul",
