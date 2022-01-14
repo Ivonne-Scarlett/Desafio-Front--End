@@ -34,7 +34,7 @@ const callBack = (posts) => {
                     >
                     · <span class="text-muted">${post[i][1].fechaCreacion}</span>
                   </p>
-                  <a class="title text-justify text-decoration-none text-dark fw-bold" id="tilte href="listpost.html?idpost=${post[i][0]}"
+                  <a class="title text-justify text-decoration-none text-dark fw-bold" href="listpost.html?idpost=${post[i][0]}"
                     >${post[i][1].titulo}</a
                   >
                   <a class ="text-decoration-none" href='listpost.html?idpost=${post[i][0]}'>
