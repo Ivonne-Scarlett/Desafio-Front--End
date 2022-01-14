@@ -18,7 +18,7 @@ const callBack = (posts) => {
         template += `
        
              <div class='my-2 d-flex cards mt-4'>
-             <div class='col-9'>
+             <div class='col-md-9 col-sm-8'>
               <p>
               <img
                       class="anc imagu"
