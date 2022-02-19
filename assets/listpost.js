@@ -9,11 +9,12 @@ const getposts = (callback) => {
         return obj.json();
       })
       .then((resp) => {
-        callBack(resp)
+        callBack(resp.post)
       });
   };
   
   const callBack = (posts) => {
+    console.log(posts)
     let idpost = location.search.slice(8)
       let template = `
       

@@ -47,7 +47,8 @@ botonCrear.addEventListener("click", () =>{
             contenidoPost: newContenidoPost,
             fechaCreacion: today
         }
-        fetch("https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/.json", {
+        console.log(newPost)
+        fetch("http://localhost:8080/posts", {
             method: "POST",
             headers: {
                 "content-type": "aplication/json"
@@ -55,8 +56,8 @@ botonCrear.addEventListener("click", () =>{
             body: JSON.stringify(newPost)
         })
         .then((resp) => {
-            location.replace("/index.html")
-            return console.log("SE AGREGO NUEVO POST")
+            //location.replace("/index.html")
+           console.log("SE AGREGO NUEVO POST")
         })
     }else{
         alert("Hay espacios vacios")
