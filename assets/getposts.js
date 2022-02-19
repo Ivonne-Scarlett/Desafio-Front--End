@@ -1,5 +1,6 @@
 let template = "";
 let indice = 0;
+
 const getposts = (callback) => {
   fetch(
     "http://localhost:8080/posts"
@@ -8,7 +9,6 @@ const getposts = (callback) => {
       return obj.json();      
     })
     .then((resp) => {
-      console.log(resp)
       callback(resp.posts);
     });
 };

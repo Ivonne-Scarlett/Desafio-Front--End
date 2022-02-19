@@ -21,10 +21,9 @@ botonLogin.addEventListener("click" ,()=>{
     .then((resp)=>resp.json())
     
     .then((data)=>{
-        const token = data.token
-        console.log('succes:',data)
-        
-        //location.replace('index.html')
+        console.log('succes:',data.token)
+        localStorage.setItem('token',data.token)
+        location.replace('index.html')
     })
 
     .catch(error =>{
@@ -33,5 +32,5 @@ botonLogin.addEventListener("click" ,()=>{
 
 })
 
-module.exports = token
+
 
