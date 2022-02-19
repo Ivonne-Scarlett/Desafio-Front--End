@@ -1,4 +1,4 @@
- 
+
 let botonCrear = document.querySelector("#buttonCrear")
 botonCrear.addEventListener("click", () =>{
     let newTitulo = document.querySelector('#inputTitulo').value    
@@ -13,10 +13,10 @@ botonCrear.addEventListener("click", () =>{
     let yyyy = today.getFullYear();
 
     let meses = [
-        "Ene",
+        "Jan",
         "Feb",
         "Mar",
-        "Abr",
+        "Apr",
         "May",
         "Jun",
         "Jul",
@@ -47,16 +47,25 @@ botonCrear.addEventListener("click", () =>{
             contenidoPost: newContenidoPost,
             fechaCreacion: today
         }
-        fetch("https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/.json", {
+        console.log(newPost)
+        fetch("http://localhost:8080/posts", 
+        {
             method: "POST",
             headers: {
-                "content-type": "aplication/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(newPost),
         })
         .then((resp) => {
-            location.replace("/index.html")
-            return console.log("SE AGREGO NUEVO POST")
+            //location.replace("/index.html")
+           console.log("SE AGREGO NUEVO POST")
+           return resp.json()
+        })
+        .then((resp) => {
+            console.log(resp)
+        })
+        .catch(error =>{
+            console.log(error)
         })
     }else{
         alert("Hay espacios vacios")

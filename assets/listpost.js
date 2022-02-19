@@ -1,5 +1,5 @@
 let idpost = location.search.slice(8)
-console.log(idpost)
+
 
 const getposts = (callback) => {
     fetch(
@@ -9,11 +9,12 @@ const getposts = (callback) => {
         return obj.json();
       })
       .then((resp) => {
-        callBack(resp)
+        callBack(resp.post)
       });
   };
   
   const callBack = (posts) => {
+ 
     let idpost = location.search.slice(8)
       let template = `
       
@@ -40,7 +41,7 @@ const getposts = (callback) => {
                 <div class="col-md-3"></div>
                 
                 <div class="col-md-12">
-                    <img class="mt-2 mb-2 col-md-12 img-responsive"
+                    <img class="mt-2 mb-2 col-md-6 img-responsive rounded mx-auto d-block"
                     src="${posts.imagenPost}"
                     height= "400px" 
                     width= 100%

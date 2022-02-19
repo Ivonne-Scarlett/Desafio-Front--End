@@ -1,20 +1,20 @@
 
 
 window.addEventListener('load', () => {
-    let idPost = location.search.slice(8)    
+    let idPost = location.search.slice(8)  
     
-    fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`)
+    fetch(`http://localhost:8080/posts/${idPost}`)
     .then((response) => {
         return response.json()
     })
     .then((obj) => {        
         
-        document.querySelector('#inputTitulo').value = obj.titulo
-        document.querySelector('#inputAbstract').value = obj.abstract
-        document.querySelector('#inputAutor').value = obj.autor        
-        document.querySelector('#inputTiempoLectura').value = obj.tiempoLectura
-        document.querySelector('#inputContenidoPost').value = obj.contenidoPost
-        document.querySelector('#inputImagenPost').value = obj.imagenPost        
+        document.querySelector('#inputTitulo').value = obj.post.titulo
+        document.querySelector('#inputAbstract').value = obj.post.abstract
+        document.querySelector('#inputAutor').value = obj.post.autor        
+        document.querySelector('#inputTiempoLectura').value = obj.post.tiempoLectura
+        document.querySelector('#inputContenidoPost').value = obj.post.contenidoPost
+        document.querySelector('#inputImagenPost').value = obj.post.imagenPost        
     })         
 })
 
@@ -46,16 +46,23 @@ modificarPost.addEventListener('click', () => {
         contenidoPost: newContenidoPost,
         imagenPost: newImagenPost
     }   
-    fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idPost}.json`,{
+
+    fetch(`http://localhost:8080/posts/${idPost}`, {
     method: 'PATCH',
     headers: {
-        'content-type':'aplication/json'    
+        'Content-Type':'application/json'    
     },
-    body: JSON.stringify(newPostAct)
+    body: JSON.stringify(newPostAct),
     })
+    .then((obj)=>{
+        return obj.json();
+    })
+
     .then((response) => {
+        console.log(response)
+        
         console.log('BD actualizada con patch')
-        location.replace('index.html')
+        //location.replace('index.html')
     }) 
     }else{
         alert("Hay espacios vacios")
@@ -68,8 +75,8 @@ let eliminar = document.querySelector('#eliminarPost')
 eliminar.addEventListener('click',()=>{
       let confirmation = confirm('¿Deseas eliminar este post? ')
       if(confirmation == true){
-        let idpost = location.search.slice(8)
-        fetch(`https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idpost}.json`,{
+        let idPost = location.search.slice(8)
+        fetch(`http://localhost:8080/posts/${idPost}`,{
           method:'DELETE'
         })
         .then(()=>{
