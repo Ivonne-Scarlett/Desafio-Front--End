@@ -3,7 +3,7 @@ console.log(idpost)
 
 const getposts = (callback) => {
     fetch(
-        `https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/${idpost}.json`
+        `http://localhost:8080/posts/${idpost}`
     )
       .then((obj) => {
         return obj.json();

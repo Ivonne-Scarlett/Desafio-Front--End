@@ -2,19 +2,21 @@ let template = "";
 let indice = 0;
 const getposts = (callback) => {
   fetch(
-    "https://desafio-front-end-ea066-default-rtdb.firebaseio.com/posts/.json"
+    "http://localhost:8080/posts"
   )
     .then((obj) => {
       return obj.json();
     })
     .then((resp) => {
-      callback(resp);
+      console.log(resp)
+      callback(resp.posts);
     });
 };
 
 const callBack = (posts) => {
   let post = Object.entries(posts).reverse();
   for (i = indice; i <= indice + 5; i++) {
+    console.log(post[i][1]._id)
     template += `
        
              <div class='my-2 d-flex cards mt-4'>
@@ -34,10 +36,10 @@ const callBack = (posts) => {
                     >
                     · <span class="text-muted">${post[i][1].fechaCreacion}</span>
                   </p>
-                  <a class="title text-justify text-decoration-none text-dark fw-bold" href="listpost.html?idpost=${post[i][0]}"
+                  <a class="title text-justify text-decoration-none text-dark fw-bold" href="listpost.html?idpost=${post[i][1]._id}"
                     >${post[i][1].titulo}</a
                   >
-                  <a class ="text-decoration-none" href='listpost.html?idpost=${post[i][0]}'>
+                  <a class ="text-decoration-none" href='listpost.html?idpost=${post[i][1]._id}'>
                   <p class="card-text text-muted fs-6 abstract">
                   ${post[i][1].abstract}
                   </p>
