@@ -1,4 +1,4 @@
-
+const token = localStorage.getItem('token')
 
 window.addEventListener('load', () => {
     let idPost = location.search.slice(8)  
@@ -23,6 +23,12 @@ let modificarPost = document.querySelector('#buttonModificar')
 let idInput = location.search.slice(8)
 
 modificarPost.addEventListener('click', () => {
+    if(token == null){
+        alert('You need to login to post')
+        location.replace('login.html')
+        return
+    }
+
     let idPost = location.search.slice(8)
     let newTitulo = document.querySelector('#inputTitulo').value    
     let newAbstract = document.querySelector('#inputAbstract').value 
@@ -50,7 +56,8 @@ modificarPost.addEventListener('click', () => {
     fetch(`http://localhost:8080/posts/${idPost}`, {
     method: 'PATCH',
     headers: {
-        'Content-Type':'application/json'    
+        'Content-Type':'application/json',
+        Authorization:`Bearer ${token}`    
     },
     body: JSON.stringify(newPostAct),
     })
@@ -59,11 +66,18 @@ modificarPost.addEventListener('click', () => {
     })
 
     .then((response) => {
-        console.log(response)
-        
-        console.log('BD actualizada con patch')
-        //location.replace('index.html')
-    }) 
+        console.log(response.ok)
+         if(response.ok == false){
+            alert('Session expired')
+            location.replace('login.html')
+            return
+         }
+        location.replace('index.html')
+    })
+    .catch(error => {
+        console.log(error) 
+    })
+
     }else{
         alert("Hay espacios vacios")
     }
@@ -77,9 +91,17 @@ eliminar.addEventListener('click',()=>{
       if(confirmation == true){
         let idPost = location.search.slice(8)
         fetch(`http://localhost:8080/posts/${idPost}`,{
-          method:'DELETE'
+          method:'DELETE',
+          headers: {
+            Authorization:`Bearer ${token}`    
+        }
         })
-        .then(()=>{
+        .then((response)=>{
+            if(response.ok == false){
+                alert('Session expired')
+                location.replace('login.html')
+                return
+             }
           location.replace('index.html')      
         })
       }

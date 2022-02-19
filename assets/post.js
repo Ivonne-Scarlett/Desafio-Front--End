@@ -1,6 +1,12 @@
+const token = localStorage.getItem('token')
 
 let botonCrear = document.querySelector("#buttonCrear")
 botonCrear.addEventListener("click", () =>{
+    if(token == null){
+        alert('You need to login to post')
+        location.replace('login.html')
+        return
+    }
     let newTitulo = document.querySelector('#inputTitulo').value    
     let newAbstract = document.querySelector('#inputAbstract').value
     let newAutor = document.querySelector('#inputAutor').value
@@ -29,7 +35,8 @@ botonCrear.addEventListener("click", () =>{
 
     let mon = meses[mm]
     today = mon + ' ' + dd + ',' + yyyy;
-    // document.write(today);
+
+
     if(
         newTitulo != '' &&
         newAbstract != '' &&
@@ -52,17 +59,18 @@ botonCrear.addEventListener("click", () =>{
         {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type':'application/json',
+                Authorization:`Bearer ${token}` 
             },
             body: JSON.stringify(newPost),
         })
         .then((resp) => {
-            //location.replace("/index.html")
-           console.log("SE AGREGO NUEVO POST")
-           return resp.json()
-        })
-        .then((resp) => {
-            console.log(resp)
+            if(resp.ok == false){
+                alert('Session expired')
+                location.replace('login.html')
+                return
+             }
+            location.replace("/index.html")
         })
         .catch(error =>{
             console.log(error)

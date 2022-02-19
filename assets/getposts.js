@@ -1,5 +1,6 @@
 let template = "";
 let indice = 0;
+
 const getposts = (callback) => {
   fetch(
     "http://localhost:8080/posts"
@@ -8,7 +9,6 @@ const getposts = (callback) => {
       return obj.json();
     })
     .then((resp) => {
-      console.log(resp)
       callback(resp.posts);
     });
 };
@@ -16,7 +16,6 @@ const getposts = (callback) => {
 const callBack = (posts) => {
   let post = Object.entries(posts).reverse();
   for (i = indice; i <= indice + 5; i++) {
-    console.log(post[i][1]._id)
     template += `
        
              <div class='my-2 d-flex cards mt-4'>
