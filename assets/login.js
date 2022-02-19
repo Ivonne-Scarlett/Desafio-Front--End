@@ -23,6 +23,11 @@ botonLogin.addEventListener("click" ,()=>{
     .then((data)=>{
         console.log('succes:',data.token)
         localStorage.setItem('token',data.token)
+        console.log(data)
+        if(data.ok == false) {
+            alert('Invalid Credentials')
+            return
+        }
         location.replace('index.html')
     })
 
