@@ -1,7 +1,7 @@
 
 
 window.addEventListener('load', () => {
-    let idPost = location.search.slice(8)    
+    let idPost = location.search.slice(8)  
     
     fetch(`http://localhost:8080/posts/${idPost}`)
     .then((response) => {
@@ -46,14 +46,13 @@ modificarPost.addEventListener('click', () => {
         contenidoPost: newContenidoPost,
         imagenPost: newImagenPost
     }   
-    console.log(newPostAct)
 
-    fetch(`http://localhost:8080/posts/${idPost}`,{
+    fetch(`http://localhost:8080/posts/${idPost}`, {
     method: 'PATCH',
     headers: {
-        'Content-Type':'aplication/json'    
+        'Content-Type':'application/json'    
     },
-    body: JSON.stringify(newPostAct)
+    body: JSON.stringify(newPostAct),
     })
     .then((obj)=>{
         return obj.json();
@@ -61,6 +60,7 @@ modificarPost.addEventListener('click', () => {
 
     .then((response) => {
         console.log(response)
+        
         console.log('BD actualizada con patch')
         //location.replace('index.html')
     }) 

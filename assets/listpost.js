@@ -1,5 +1,5 @@
 let idpost = location.search.slice(8)
-console.log(idpost)
+
 
 const getposts = (callback) => {
     fetch(
@@ -14,7 +14,7 @@ const getposts = (callback) => {
   };
   
   const callBack = (posts) => {
-    console.log(posts)
+ 
     let idpost = location.search.slice(8)
       let template = `
       

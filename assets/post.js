@@ -1,4 +1,4 @@
- 
+
 let botonCrear = document.querySelector("#buttonCrear")
 botonCrear.addEventListener("click", () =>{
     let newTitulo = document.querySelector('#inputTitulo').value    
@@ -48,16 +48,24 @@ botonCrear.addEventListener("click", () =>{
             fechaCreacion: today
         }
         console.log(newPost)
-        fetch("http://localhost:8080/posts", {
+        fetch("http://localhost:8080/posts", 
+        {
             method: "POST",
             headers: {
-                "content-type": "aplication/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(newPost),
         })
         .then((resp) => {
             //location.replace("/index.html")
            console.log("SE AGREGO NUEVO POST")
+           return resp.json()
+        })
+        .then((resp) => {
+            console.log(resp)
+        })
+        .catch(error =>{
+            console.log(error)
         })
     }else{
         alert("Hay espacios vacios")
