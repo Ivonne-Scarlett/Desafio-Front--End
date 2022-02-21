@@ -55,7 +55,7 @@ botonCrear.addEventListener("click", () =>{
             fechaCreacion: today
         }
         console.log(newPost)
-        fetch("http://localhost:8080/posts", 
+        fetch("http://apibackend-smart-panda-xb.mybluemix.net/posts", 
         {
             method: "POST",
             headers: {

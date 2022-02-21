@@ -11,7 +11,7 @@ botonLogin.addEventListener("click" ,()=>{
         password:password
     }
 
-    fetch('http://localhost:8080/auth/login',{
+    fetch('http://apibackend-smart-panda-xb.mybluemix.net/auth/login',{
         method:'POST',
         headers: {
             'Content-Type': 'application/json'

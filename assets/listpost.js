@@ -3,7 +3,7 @@ let idpost = location.search.slice(8)
 
 const getposts = (callback) => {
     fetch(
-        `http://localhost:8080/posts/${idpost}`
+        `http://apibackend-smart-panda-xb.mybluemix.net/posts/${idpost}`
     )
       .then((obj) => {
         return obj.json();
