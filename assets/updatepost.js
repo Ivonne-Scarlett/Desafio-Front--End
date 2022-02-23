@@ -3,7 +3,7 @@ const token = localStorage.getItem('token')
 window.addEventListener('load', () => {
     let idPost = location.search.slice(8)  
     
-    fetch(`https://apibackend-smart-panda-xb.mybluemix.net/posts/${idPost}`)
+    fetch(`https://apibackend-nice-toucan-ik.mybluemix.net/posts/${idPost}`)
     .then((response) => {
         return response.json()
     })
@@ -53,7 +53,7 @@ modificarPost.addEventListener('click', () => {
         imagenPost: newImagenPost
     }   
 
-    fetch(`https://apibackend-smart-panda-xb.mybluemix.net/posts/${idPost}`, {
+    fetch(`https://apibackend-nice-toucan-ik.mybluemix.net/posts/${idPost}`, {
     method: 'PATCH',
     headers: {
         'Content-Type':'application/json',
@@ -90,7 +90,7 @@ eliminar.addEventListener('click',()=>{
       let confirmation = confirm('¿Deseas eliminar este post? ')
       if(confirmation == true){
         let idPost = location.search.slice(8)
-        fetch(`https://apibackend-smart-panda-xb.mybluemix.net/posts/${idPost}`,{
+        fetch(`https://apibackend-nice-toucan-ik.mybluemix.net/posts/${idPost}`,{
           method:'DELETE',
           headers: {
             Authorization:`Bearer ${token}`    

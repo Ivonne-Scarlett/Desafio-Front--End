@@ -3,7 +3,7 @@ let indice = 0;
 
 const getposts = (callback) => {
   fetch(
-    "https://apibackend-smart-panda-xb.mybluemix.net/posts"
+    "https://apibackend-nice-toucan-ik.mybluemix.net/posts"
   )
     .then((obj) => {          
       return obj.json();      

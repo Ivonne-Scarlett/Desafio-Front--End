@@ -3,7 +3,7 @@ let idpost = location.search.slice(8)
 
 const getposts = (callback) => {
     fetch(
-        `https://apibackend-smart-panda-xb.mybluemix.net/posts/${idpost}`
+        `https://apibackend-nice-toucan-ik.mybluemix.net/posts/${idpost}`
     )
       .then((obj) => {
         return obj.json();
@@ -76,11 +76,5 @@ const getposts = (callback) => {
 
 
 
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   let eliminar = document.querySelector('#eliminarPost')
-//   console.log('DOM fully loaded and parsed');
-//   eliminar.addEventListener('click',()=>{
-//     console.log('se esta eliminando')
-//   })
-// });
+
 
